@@ -10,9 +10,9 @@
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,79,81,0.92) 0%,rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">Get in Touch</p>
-        <h1 class="text-4xl font-bold mb-3">Contact TTO</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">Contact TTO</h1>
         <p class="text-white/80 text-lg max-w-2xl">We're here to help with your IP questions, disclosure guidance, or partnership inquiries. Reach out and we'll respond within 2 business days.</p>
     </div>
 </section>
@@ -85,8 +85,8 @@
                     </div>
                     <div>
                         <p class="font-semibold text-tto-teal-900 text-sm mb-1">Email</p>
-                        <a href="mailto:tto@northsouth.edu" class="text-sm text-tto-teal hover:underline">tto@northsouth.edu</a><br>
-                        <a href="mailto:industry.tto@northsouth.edu" class="text-sm text-tto-teal hover:underline">industry.tto@northsouth.edu</a>
+                        <a href="mailto:tto@northsouth.edu" class="text-sm text-tto-teal hover:underline break-all">tto@northsouth.edu</a><br>
+                        <a href="mailto:industry.tto@northsouth.edu" class="text-sm text-tto-teal hover:underline break-all">industry.tto@northsouth.edu</a>
                     </div>
                 </div>
                 <div class="flex gap-4 p-4 bg-tto-teal-light rounded-xl">

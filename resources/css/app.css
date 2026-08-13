@@ -221,6 +221,20 @@
         border-color: white;
     }
 
+    .btn-outline-teal {
+        border: 2px solid #0D9EA0;
+        color: #0D9EA0;
+        padding: 0.65rem 1.75rem;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: background-color 0.15s, border-color 0.15s;
+        display: inline-block;
+    }
+    .btn-outline-teal:hover {
+        background-color: rgba(13, 158, 160, 0.08);
+    }
+
     /* ── Section titles ────────────────────────────────── */
     .section-eyebrow {
         font-size: 0.72rem;

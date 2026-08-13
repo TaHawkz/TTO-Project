@@ -9,9 +9,9 @@
         <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,79,81,0.92) 0%,rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">For Inventors</p>
-        <h1 class="text-4xl font-bold mb-3">Invention Disclosure</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">Invention Disclosure</h1>
         <p class="text-white/80 text-lg max-w-2xl">The invention disclosure is the first step in protecting your innovation. Use the TTMS portal to submit your disclosure online, or contact the TTO for assistance.</p>
     </div>
 </section>
@@ -67,7 +67,7 @@
     {{-- Timeline --}}
     <div class="mb-14 bg-tto-teal-light rounded-2xl p-8">
         <h2 class="text-xl font-bold text-tto-teal-900 mb-6 text-center">What Happens After You Submit</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             @php $timeline = [
                 ['time'=>'Day 1', 'event'=>'Disclosure ID assigned (DISC-YYYY-NNNN) + email confirmation'],
                 ['time'=>'5 days', 'event'=>'TTO Officer contacts you to schedule a first meeting'],

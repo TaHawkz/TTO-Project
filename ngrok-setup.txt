@@ -1,0 +1,122 @@
+NGROK SETUP - TTO Project
+=========================
+Written for someone setting this up from scratch on a new PC.
+
+
+PART 1: FIRST TIME SETUP (DO THIS ONCE PER MACHINE)
+=====================================================
+
+--- Step 1: Install Node.js 22 ---
+
+1. Go to nodejs.org in your browser
+2. Click "Download" in the top menu
+3. In the version dropdown, select v22.23.2 (LTS)
+4. Make sure "Windows" is selected
+5. Click "Windows Installer (.msi)" button
+6. Run the downloaded installer and follow the steps
+7. Restart VS Code after installing
+
+
+--- Step 2: Fix PowerShell execution policy (one time only) ---
+
+1. Open a terminal in VS Code
+2. Paste this command and press Enter:
+   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+3. If it asks Y/N, type Y and press Enter
+4. This allows npm to run in PowerShell - you only do this once ever
+
+
+--- Step 3: Install ngrok ---
+
+1. Go to ngrok.com in your browser
+2. Sign up for a free account (no credit card needed)
+3. After signing in, you will see a screen "Select a product to get started"
+4. Click "Get started" under "Share Localhost"
+5. On the next page, click "Windows" under Command Line
+6. Click "Microsoft Store Installer" button - this opens the Microsoft Store
+7. Install ngrok from the Microsoft Store
+8. After installing, come back to the ngrok website
+
+
+--- Step 4: Add your authtoken to ngrok ---
+
+1. On the ngrok setup page, click "Show Authtoken" to reveal your token
+2. Copy the command that looks like:
+   ngrok config add-authtoken XXXXXXXXXXXXXXXX
+3. Paste and run it in your VS Code terminal
+4. You should see: "Authtoken saved to configuration file"
+
+
+--- Step 5: Set up PHP 8.4 for VS Code (for TTO-Project) ---
+
+This is already done on the work laptop via .vscode/settings.json
+On a new PC, the .vscode/settings.json file in the project already
+handles this automatically - no extra steps needed.
+
+
+PART 2: EVERY TIME YOU WANT TO SHARE THE PROJECT
+=================================================
+
+Make sure you have at least 3 terminal tabs open in VS Code.
+
+
+--- Terminal Tab 1: Build the assets ---
+
+Run this first (only needed if you changed any CSS/JS since last time):
+    npm run build
+
+Wait for it to say "built in Xms" before continuing.
+
+
+--- Terminal Tab 2: Start the Laravel server ---
+
+    php artisan serve
+
+Leave this running. You should see:
+    INFO  Server running on [http://127.0.0.1:8000].
+
+
+--- Terminal Tab 3: Start ngrok ---
+
+    ngrok http 8000
+
+You will see something like:
+    Forwarding   https://pasture-unleveled-broiling.ngrok-free.dev -> http://localhost:8000
+
+That URL is your public link. Copy it and share with anyone.
+Your URL (pasture-unleveled-broiling.ngrok-free.dev) is permanent
+and tied to your ngrok account - it will NOT change between sessions.
+
+
+--- What the person receiving the link sees ---
+
+- They open the URL in any browser on any device
+- The page loads like a normal website
+- No login or anything needed on their end
+
+
+TO STOP SHARING
+---------------
+- Press Ctrl+C in the ngrok terminal tab
+- Press Ctrl+C in the php artisan serve terminal tab
+
+
+PART 3: SWITCHING BETWEEN LOCAL AND NGROK
+==========================================
+
+When using ngrok, the .env file has:
+    APP_URL=https://pasture-unleveled-broiling.ngrok-free.dev
+
+When developing locally (without ngrok), change it back to:
+    APP_URL=http://127.0.0.1:8000
+
+After changing .env, run:
+    php artisan config:clear
+
+
+IMPORTANT NOTES
+---------------
+- Your PC must be ON and servers must be running for the URL to work
+- ngrok free tier: 1 public URL at a time, URL is permanent, no cost
+- Node 22 is required - Node 18 will NOT work with this project
+- If npm gives "running scripts is disabled" error, redo Step 2 above

@@ -10,9 +10,9 @@
         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,79,81,0.92) 0%, rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">About</p>
-        <h1 class="text-4xl font-bold mb-4">About the Technology Transfer Office</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">About the Technology Transfer Office</h1>
         <p class="text-white/80 text-lg max-w-2xl">Established to protect, manage, and commercialize intellectual property created by NSU researchers, faculty, and students.</p>
     </div>
 </section>
@@ -138,7 +138,7 @@
             <h2 class="section-title">Meet the <span>Team</span></h2>
             <p class="section-subtitle">The dedicated professionals behind NSU's technology transfer activities</p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
             @foreach(['Director', 'TTO Officer', 'Legal Officer', 'Reviewer', 'System Administrator'] as $role)
             <div class="bg-white rounded-xl border border-gray-200 p-5 text-center opacity-50">
                 <div class="w-14 h-14 rounded-full bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center mx-auto mb-4">

@@ -10,9 +10,9 @@
         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,79,81,0.92) 0%,rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">NSU Innovations</p>
-        <h1 class="text-4xl font-bold mb-3">Technology Portfolio</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">Technology Portfolio</h1>
         <p class="text-white/80 text-lg max-w-2xl">Search and explore our portfolio of patent-protected and early-stage technologies available for licensing and collaboration.</p>
     </div>
 </section>
@@ -83,9 +83,9 @@
             </div>
 
             @if($tech->licensing_available)
-            <div class="flex items-center gap-2 text-sm text-tto-teal font-medium mb-4">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                Exclusive licensing available — contact {{ $tech->contact_email }}
+            <div class="flex flex-wrap items-center gap-2 text-sm text-tto-teal font-medium mb-4">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <span class="break-all">Exclusive licensing available — contact {{ $tech->contact_email }}</span>
             </div>
             @endif
 
@@ -94,7 +94,7 @@
             {{-- Modal --}}
             <div x-show="modalOpen" class="fixed inset-0 z-50 flex items-center justify-center px-4" style="display:none;">
                 <div class="absolute inset-0 bg-black/50" @click="modalOpen=false"></div>
-                <div class="relative bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full z-10">
+                <div class="relative bg-white rounded-2xl shadow-2xl p-5 sm:p-8 max-w-md w-full z-10">
                     <h3 class="font-bold text-lg text-gray-900 mb-1">Express Interest</h3>
                     <p class="text-sm text-gray-500 mb-5">{{ $tech->title }}</p>
                     <form action="{{ route('industry-inquiry.store') }}" method="POST">

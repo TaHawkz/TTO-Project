@@ -10,10 +10,10 @@
         <img src="https://images.unsplash.com/photo-1532094349884-543559c21f85?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(10,79,81,0.93) 0%, rgba(13,158,160,0.72) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 flex flex-col lg:flex-row items-center gap-12">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-28 flex flex-col lg:flex-row items-center gap-12">
         <div class="flex-1 text-white">
             <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-4">North South University · Technology Transfer Office</p>
-            <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-5">Bridging Innovation<br>and Industry</h1>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">Bridging Innovation<br>and Industry</h1>
             <p class="text-lg text-white/80 mb-8 max-w-xl leading-relaxed">
                 We protect, commercialize, and advance NSU's intellectual property — connecting groundbreaking university research with industry partners, entrepreneurs, and society.
             </p>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="flex-shrink-0 w-full lg:w-auto">
-            <div class="glass-card rounded-2xl p-6 grid grid-cols-2 gap-5 min-w-[260px]">
+            <div class="glass-card rounded-2xl p-6 grid grid-cols-2 gap-5 w-full max-w-[320px] sm:min-w-[260px]">
                 @php $services = [
                     ['label'=>'Invention Disclosure', 'icon'=>'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'],
                     ['label'=>'Patent Filing', 'icon'=>'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'],
@@ -109,7 +109,7 @@
 <section class="bg-tto-teal py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white fade-up">
         <p class="text-tto-teal-light text-sm font-semibold uppercase tracking-widest mb-3">Ready to Start?</p>
-        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Have a Groundbreaking Discovery?</h2>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">Have a Groundbreaking Discovery?</h2>
         <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
             Innovation is only impactful when it reaches the people who need it most. Let us help you protect your idea and bring it to the world.
         </p>

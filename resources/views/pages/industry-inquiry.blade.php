@@ -9,16 +9,16 @@
         <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,79,81,0.92) 0%,rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">For Industry</p>
-        <h1 class="text-4xl font-bold mb-3">Industry Inquiry Form</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">Industry Inquiry Form</h1>
         <p class="text-white/80 text-lg max-w-2xl">Tell us about your organisation and what you are looking for. We'll match you with the right NSU researchers or technologies.</p>
     </div>
 </section>
 
 <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
-    <form action="{{ route('industry-inquiry.store') }}" method="POST" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 space-y-6">
+    <form action="{{ route('industry-inquiry.store') }}" method="POST" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-8 space-y-6">
         @csrf
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">

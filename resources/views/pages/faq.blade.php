@@ -10,9 +10,9 @@
         <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,79,81,0.92) 0%,rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">Help</p>
-        <h1 class="text-4xl font-bold mb-3">Frequently Asked Questions</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">Frequently Asked Questions</h1>
         <p class="text-white/80 text-lg max-w-2xl">Answers to common questions about patents, IP ownership, commercialization, and using the TTO portal.</p>
     </div>
 </section>

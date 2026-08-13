@@ -9,9 +9,9 @@
         <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,79,81,0.92) 0%,rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">Legal</p>
-        <h1 class="text-4xl font-bold mb-2">Terms &amp; Conditions</h1>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">Terms &amp; Conditions</h1>
         <p class="text-white/70 text-sm">Last updated: August 2026</p>
     </div>
 </section>
@@ -41,7 +41,7 @@
 
     </div>
     <div class="mt-10 text-center">
-        <a href="{{ route('contact') }}" class="btn-outline">Contact TTO</a>
+        <a href="{{ route('contact') }}" class="btn-outline-teal">Contact TTO</a>
     </div>
 </section>
 

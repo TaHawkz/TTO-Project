@@ -9,9 +9,9 @@
         <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1400&q=80" alt="" class="w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(10,79,81,0.92) 0%,rgba(13,158,160,0.70) 100%);"></div>
     </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 text-white">
         <p class="text-tto-amber font-semibold text-sm uppercase tracking-widest mb-3">Entrepreneurship</p>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Startups &amp; Innovation</h1>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Startups &amp; Innovation</h1>
         <p class="text-white/80 text-xl max-w-2xl">NSU's Technology Transfer Office supports researchers and students in building technology ventures based on NSU's intellectual property.</p>
     </div>
 </section>
@@ -42,32 +42,32 @@
                 <p class="text-sm text-gray-600 leading-relaxed mb-5 flex-1">{{ $startup->description }}</p>
                 <div class="border-t border-gray-100 pt-4 space-y-2 text-sm text-gray-600">
                     @if(count($startup->founders))
-                    <div class="flex gap-2">
+                    <div class="flex flex-wrap gap-2">
                         <span class="font-medium text-gray-700 flex-shrink-0">Founders:</span>
-                        <span>{{ implode(', ', $startup->founders) }}</span>
+                        <span class="break-words min-w-0">{{ implode(', ', $startup->founders) }}</span>
                     </div>
                     @endif
                     @if($startup->faculty_advisor)
-                    <div class="flex gap-2">
+                    <div class="flex flex-wrap gap-2">
                         <span class="font-medium text-gray-700 flex-shrink-0">Faculty Advisor:</span>
-                        <span>{{ $startup->faculty_advisor }}</span>
+                        <span class="break-words min-w-0">{{ $startup->faculty_advisor }}</span>
                     </div>
                     @endif
                     @if($startup->technology_used)
-                    <div class="flex gap-2">
+                    <div class="flex flex-wrap gap-2">
                         <span class="font-medium text-gray-700 flex-shrink-0">Core Technology:</span>
-                        <span>{{ $startup->technology_used }}</span>
+                        <span class="break-words min-w-0">{{ $startup->technology_used }}</span>
                     </div>
                     @endif
                     @if($startup->incorporation_date)
-                    <div class="flex gap-2">
+                    <div class="flex flex-wrap gap-2">
                         <span class="font-medium text-gray-700 flex-shrink-0">Incorporated:</span>
-                        <span>{{ $startup->incorporation_date->format('F Y') }}</span>
+                        <span class="break-words min-w-0">{{ $startup->incorporation_date->format('F Y') }}</span>
                     </div>
                     @endif
                 </div>
                 @if($startup->website)
-                <a href="{{ $startup->website }}" class="btn-outline text-sm text-center mt-5" target="_blank">Visit Website</a>
+                <a href="{{ $startup->website }}" class="btn-outline-teal text-sm text-center mt-5" target="_blank">Visit Website</a>
                 @endif
             </div>
         </div>

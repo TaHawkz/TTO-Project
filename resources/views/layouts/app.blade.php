@@ -11,6 +11,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- Responsive utility classes not yet in build --}}
+    <style>
+        @media (min-width: 640px) {
+            .sm\:text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+            .sm\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+            .sm\:py-14 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+            .sm\:py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+            .sm\:py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+            .sm\:py-28 { padding-top: 7rem; padding-bottom: 7rem; }
+            .sm\:p-8 { padding: 2rem; }
+            .sm\:gap-0 { gap: 0; }
+        }
+        @media (min-width: 1024px) {
+            .lg\:sticky { position: sticky; }
+            .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+            .lg\:col-start-2 { grid-column-start: 2; }
+            .lg\:col-start-4 { grid-column-start: 4; }
+        }
+    </style>
 </head>
 <body class="antialiased">
 
@@ -64,6 +83,7 @@
                             <a href="{{ route('about') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tto-teal-light hover:text-tto-teal-dark font-medium rounded-lg mx-1">About TTO</a>
                             <a href="{{ route('faq') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tto-teal-light hover:text-tto-teal-dark font-medium rounded-lg mx-1">FAQ</a>
                             <a href="{{ route('contact') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tto-teal-light hover:text-tto-teal-dark font-medium rounded-lg mx-1">Contact Us</a>
+                            <a href="{{ route('terms') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-tto-teal-light hover:text-tto-teal-dark font-medium rounded-lg mx-1">Terms of Use</a>
                         </div>
                     </div>
 
@@ -100,6 +120,7 @@
             <div x-show="mobileOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="lg:hidden border-t border-gray-100 py-4 space-y-1" style="display:none;">
                 <a href="{{ route('home') }}" class="block px-4 py-2 text-sm font-medium text-gray-800 hover:text-tto-teal rounded-lg hover:bg-tto-teal-light">Home</a>
                 <a href="{{ route('about') }}" class="block px-4 py-2 text-sm font-medium text-gray-800 hover:text-tto-teal rounded-lg hover:bg-tto-teal-light">About TTO</a>
+                <a href="{{ route('terms') }}" class="block px-4 py-2 text-sm font-medium text-gray-800 hover:text-tto-teal rounded-lg hover:bg-tto-teal-light">Terms of Use</a>
                 <a href="{{ route('ip-policy') }}" class="block px-4 py-2 text-sm font-medium text-gray-800 hover:text-tto-teal rounded-lg hover:bg-tto-teal-light">IP Policy</a>
                 <a href="{{ route('sop-guidelines') }}" class="block px-4 py-2 text-sm font-medium text-gray-800 hover:text-tto-teal rounded-lg hover:bg-tto-teal-light">SOP &amp; Guidelines</a>
                 <a href="{{ route('forms-templates') }}" class="block px-4 py-2 text-sm font-medium text-gray-800 hover:text-tto-teal rounded-lg hover:bg-tto-teal-light">Forms &amp; Templates</a>
