@@ -1,0 +1,381 @@
+================================================================================
+TECHNOLOGY TRANSFER MANAGEMENT SYSTEM (TTMS)
+Full Project Plan
+Client: Technology Transfer Office (TTO), North South University, Dhaka
+================================================================================
+
+AGREED TECH STACK
+-----------------
+Framework    : Laravel (PHP)
+Templating   : Laravel Blade (what the developer already knows)
+UI / CSS     : Tailwind CSS
+Reactivity   : Livewire (reactive PHP components, Blade-based — no JSON API)
+               Alpine.js (15kb JS, adds simple interactivity to Blade templates)
+Admin Layout : Custom-built with Blade + Tailwind (no heavy admin shell)
+Tables       : DataTables.js (server-side paginated tables, familiar plain JS)
+Charts       : Chart.js (plain JS, for analytics/dashboards)
+Build Tool   : Vite (ships with Laravel)
+Database     : MySQL (via Laragon)
+File Storage : Laravel Storage (local disk)
+Email        : Laravel Mail + Queue (MailHog via Laragon for local dev)
+PDF Export   : barryvdh/laravel-dompdf
+Excel Export : maatwebsite/excel
+
+WHY THIS STACK
+--------------
+- Everything stays in Blade — no separate JS framework to learn
+- Livewire components are just PHP classes + Blade files (very familiar)
+- Alpine.js adds dropdowns, modals, toggles with simple HTML attributes
+- No Filament overhead — the admin layout is your own Blade templates
+- DataTables.js and Chart.js are plain JS plugins you can use directly
+- Fast in both development and production
+
+================================================================================
+PHASE 1 — Foundation & Authentication
+================================================================================
+Goal: Working Laravel project with all 8 roles, login, and RBAC.
+
+Tasks:
+  1. Scaffold Laravel project, install Tailwind + Livewire + Alpine.js
+  2. Design full database schema (see tables at bottom of this file)
+  3. Build migrations and seeders
+  4. Auth: registration, login, password reset (Laravel Breeze with Blade)
+  5. Role system (8 roles):
+       Student | Faculty | Staff | Reviewer | TTO Officer
+       Legal Officer | Director | System Administrator
+  6. Role-based middleware and route guards
+  7. Per-role dashboard landing page (custom Blade layout)
+  8. Admin layout: sidebar nav + topbar + main content area (Blade + Tailwind)
+
+Key files:
+  routes/web.php
+  app/Models/User.php
+  app/Models/Role.php
+  database/migrations/
+  resources/views/layouts/admin.blade.php
+  resources/views/layouts/public.blade.php
+
+================================================================================
+PHASE 2 — Public-Facing TTO Website
+================================================================================
+Goal: All public pages live and navigable.
+
+Pages:
+  - Home (TTO activities, featured technologies, announcements)
+  - About TTO (mission, vision, team profiles)
+  - IP Policy (embedded/downloadable governance documents)
+  - SOP & Guidelines (procedures, flowcharts)
+  - Forms & Templates (downloadable files: Invention Disclosure Form,
+    IP Assignment, NDA/CDA, Revenue Sharing, Waiver, Sponsored Research)
+  - Technology Portfolio (public searchable listing — DataTables.js)
+  - Startups & Innovation (showcase cards)
+  - Industry Collaboration (inquiry forms: sponsored research, licensing,
+    consultancy, collaborative research, technology scouting)
+  - FAQ (accordion — Alpine.js)
+  - Contact Us (office info + inquiry form)
+
+Key files:
+  resources/views/public/
+  app/Http/Controllers/PublicController.php
+
+================================================================================
+PHASE 3 — Invention Disclosure Module
+================================================================================
+Goal: Authorized users can submit, save as draft, and track disclosures.
+
+Form sections (Livewire multi-step form):
+  A. Inventor Information    (Name, Designation, Department, Contact)
+  B. Invention Information   (Title, Abstract, Description, Technical Field,
+                              Problem Solved, Novel Features)
+  C. Commercial Information  (Potential Applications, Industry Sector,
+                              Existing Alternatives)
+  D. Research Information    (Funding Source, Sponsor Info, Project Reference)
+  E. Supporting Documents    (PDF Upload, Images, Drawings, Files)
+
+Features:
+  - Save as draft at any step
+  - Multi-file upload (Laravel Storage, secure disk)
+  - Auto-generate unique Disclosure ID (e.g., DISC-2025-0001)
+  - Email notification on submission (Laravel Mail + Queue)
+  - Status tracking visible to submitter
+
+Key files:
+  app/Models/Disclosure.php
+  app/Livewire/DisclosureForm.php
+  resources/views/livewire/disclosure-form.blade.php
+  database/migrations/create_disclosures_table.php
+
+================================================================================
+PHASE 4 — Workflow Management System
+================================================================================
+Goal: Automated status transitions with email notifications at each step.
+
+Workflow 1 — Invention Disclosure:
+  Research Created → Disclosure Submitted → TTO Review →
+  Ownership Determination → Patentability Evaluation →
+  IP Committee Review → Decision → Patent Filing → Commercialization
+
+Workflow 2 — Ownership Determination:
+  Disclosure Received → Review Inventor Status → Review Funding Source →
+  Review Resource Utilization → Determine Ownership → Execute Agreements
+  Outcomes: University / Inventor / Joint / Sponsored Research Ownership
+
+Workflow 3 — Patent Filing:
+  Positive Evaluation → Filing Approval → Patent Drafting →
+  Inventor Review → Application Submission → Patent Prosecution →
+  Patent Grant / Closure
+
+Workflow 4 — Commercialization:
+  Protected IP → Market Assessment → Industry Engagement →
+  Licensing/Startup Decision → Agreement Execution → Revenue Generation
+
+Workflow 5 — Revenue Distribution:
+  Revenue Received → Verify Revenue Source → Calculate Distribution Shares →
+  Approval → Distribution to Beneficiaries → Record Maintenance
+
+Implementation:
+  - Laravel Events + Listeners for state transitions
+  - Laravel Jobs + Queue for email notifications (non-blocking)
+  - Workflow timeline visible on each Disclosure/Patent detail page
+
+Key files:
+  app/Models/WorkflowStep.php
+  app/Services/WorkflowService.php
+  app/Jobs/SendWorkflowNotification.php
+  app/Events/WorkflowStepCompleted.php
+
+================================================================================
+PHASE 5 — Document Management System
+================================================================================
+Goal: Secure versioned document repository with full access control.
+
+Document types:
+  Disclosure forms | Assignment agreements | NDA/CDA |
+  Revenue sharing agreements | Sponsored research agreements |
+  Licensing agreements
+
+Features:
+  - Upload/download with role-based access control
+  - Version control (track and access previous revisions)
+  - Audit log (who viewed/downloaded/modified, with timestamp + IP)
+  - Full-text search with DataTables.js server-side filtering
+  - Download history per user
+
+Key files:
+  app/Models/Document.php
+  app/Models/DocumentVersion.php
+  app/Services/DocumentService.php
+  app/Http/Controllers/DocumentController.php
+
+================================================================================
+PHASE 6 — Patent Management Module
+================================================================================
+Goal: Full patent portfolio tracking with deadline and renewal alerts.
+
+Patent statuses:
+  Draft → Filed → Published → Examination → Granted → Expired / Abandoned
+
+Features:
+  - Create and track patent applications
+  - Filing deadline management (dates + countdown)
+  - Automated renewal alert emails (Laravel Scheduled Command, daily check)
+  - Portfolio view (DataTables.js — filterable by status, date, inventor)
+  - Link patents back to originating Disclosure record
+
+Key files:
+  app/Models/Patent.php
+  app/Console/Commands/SendPatentReminderEmails.php
+  app/Http/Controllers/PatentController.php
+
+================================================================================
+PHASE 7 — IP Assignment & Agreement Management
+================================================================================
+Goal: Generate, track, and digitally approve IP agreements.
+
+Agreement types:
+  - IP Assignment Agreement
+  - NDA / Confidentiality Disclosure Agreement (CDA)
+  - Revenue Sharing Agreement
+  - Sponsored Research Agreement
+  - Licensing Agreement
+
+Features:
+  - Generate agreements from Blade-rendered templates (pre-filled with case data)
+  - Multi-party approval workflow (each party approves in sequence)
+  - Ownership tracking: University / Inventor / Joint / Sponsored
+  - Agreement status monitoring
+  - Export agreement as PDF (Laravel DomPDF)
+
+Key files:
+  app/Models/Agreement.php
+  app/Services/AgreementService.php
+  resources/views/agreements/ (template Blade files)
+
+================================================================================
+PHASE 8 — Commercialization Management
+================================================================================
+Goal: Track technology licensing, industry engagement, and startup activity.
+
+Features:
+  - Technology evaluation records per patent/IP
+  - Licensing opportunity pipeline (stage-based)
+  - Industry partner engagement log
+  - Startup/spinout records:
+      Name | Founders | Faculty Advisor | Technology Used |
+      Incorporation Date | Funding Status | Website
+  - Progress monitoring against commercialization milestones
+  - Public startup showcase (feeds Phase 2 public website automatically)
+
+Key files:
+  app/Models/Commercialization.php
+  app/Models/Startup.php
+  app/Http/Controllers/CommercializationController.php
+
+================================================================================
+PHASE 9 — Revenue Distribution Management
+================================================================================
+Goal: Track royalties and calculate/distribute revenue shares.
+
+Features:
+  - Revenue entry per IP asset (patent/license)
+  - Distribution formula setup per IP:
+      Inventor share % | Department share % | University share %
+  - Inventor incentive tracking
+  - Distribution approval workflow
+  - Distribution reports (PDF + Excel export)
+
+Key files:
+  app/Models/Revenue.php
+  app/Models/RevenueDistribution.php
+  app/Http/Controllers/RevenueController.php
+
+================================================================================
+PHASE 10 — Reports & Analytics Dashboard
+================================================================================
+Goal: Role-specific dashboards with export capability.
+
+Reports:
+  - Disclosure statistics (by period, department, status)
+  - Patent statistics (by status, type, inventor)
+  - Commercialization performance metrics
+  - Startup metrics
+  - Revenue and distribution reports
+  - Summary dashboard cards + Chart.js charts per role
+
+Export formats:
+  - PDF     (barryvdh/laravel-dompdf)
+  - Excel   (maatwebsite/excel)
+  - CSV
+
+Key files:
+  app/Http/Controllers/ReportController.php
+  resources/views/reports/
+  resources/views/dashboard/ (role-specific Chart.js dashboards)
+
+================================================================================
+PHASE 11 — Admin Panel & Security Hardening
+================================================================================
+Goal: Full TTO self-service administration, audit logs, and security.
+
+Features (all built as custom Blade + Livewire pages):
+  - User management: create, edit, assign roles, activate/deactivate
+  - Content management: announcements, team bios, downloadable forms (public site)
+  - Audit log viewer: filterable by user / action / date
+  - Automated database backup (Laravel Backup package)
+  - Security: HTTPS enforced, CSRF on all forms, role middleware on all routes,
+    rate limiting on login
+  - Activity monitoring (last login, recent actions per user)
+
+Key files:
+  app/Http/Controllers/Admin/UserController.php
+  app/Models/AuditLog.php
+  app/Http/Middleware/CheckRole.php
+
+================================================================================
+DATABASE SCHEMA OVERVIEW
+================================================================================
+
+Table                   | Key Columns
+------------------------|-----------------------------------------------------
+users                   | id, name, email, password, role_id, department,
+                        | designation, is_active, last_login_at
+roles                   | id, name (8 roles)
+disclosures             | id, disclosure_id (unique, e.g. DISC-2025-0001),
+                        | user_id, status, title, abstract, technical_field,
+                        | problem_solved, novel_features, potential_applications,
+                        | industry_sector, funding_source, sponsor_info,
+                        | project_reference, submitted_at
+disclosure_inventors    | id, disclosure_id, user_id, is_primary
+patents                 | id, disclosure_id, title, status, filing_date,
+                        | grant_date, expiry_date, renewal_date, application_no
+agreements              | id, type, related_type (polymorphic), related_id,
+                        | status, ownership_type, executed_at
+workflow_steps          | id, disclosure_id, step_name, status, assigned_to,
+                        | completed_at, notes, notified_at
+documents               | id, related_type (polymorphic), related_id, type,
+                        | original_name, path, version, uploaded_by,
+                        | access_roles (JSON)
+document_versions       | id, document_id, path, version, uploaded_by, note
+commercializations      | id, patent_id, stage, licensing_type, industry_partner,
+                        | market_assessment_date, notes
+startups                | id, name, founders (JSON), faculty_advisor_id,
+                        | technology_id, incorporation_date, funding_status,
+                        | website, is_public
+revenues                | id, source_type (polymorphic), source_id, amount,
+                        | currency, received_date, description
+revenue_distributions   | id, revenue_id, beneficiary_type, beneficiary_id,
+                        | percentage, amount, status, distributed_at
+audit_logs              | id, user_id, action, model_type, model_id, old_values
+                        | (JSON), new_values (JSON), ip_address, created_at
+announcements           | id, title, body, is_published, published_at
+technologies            | id, title, description, sector, stage,
+                        | licensing_available, patent_id
+industry_inquiries      | id, org_name, contact_name, email, phone,
+                        | inquiry_type, message, status, assigned_to
+
+================================================================================
+VERIFICATION (per phase)
+================================================================================
+- Start Laragon, access via http://TTMS.test (configure virtual host)
+- Run: php artisan migrate:fresh --seed  (reset DB to clean state)
+- Log in as each role → verify page access and permission denials
+- Walk through full Invention Disclosure → Patent Filing workflow end-to-end
+- Confirm email notifications fire at each workflow step (check MailHog)
+- Test file upload, download, version history in Document Management
+- Generate and download a PDF report and Excel export
+- Test mobile responsiveness at 375px viewport (mobile nav, tables, forms)
+- Verify audit log captures all data-modifying actions
+
+================================================================================
+NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+- HTTPS/SSL enforced in production
+- RBAC enforced on every portal route via middleware
+- Audit logs for all data-changing operations (automatic via Model observers)
+- Automated daily database backups (laravel-backup package)
+- Mobile responsive at all screen sizes
+- Optimized for low-bandwidth (lazy-load images, minimal JS, Vite bundling)
+- TTO staff can operate system fully independently (CMS for public content)
+- Deliverables: source code, database dump, user manuals, training materials
+- Minimum 6 months post-deployment technical support
+
+================================================================================
+COMPOSER PACKAGES TO INSTALL
+================================================================================
+  livewire/livewire              Reactive Blade components
+  barryvdh/laravel-dompdf        PDF generation
+  maatwebsite/excel              Excel + CSV export
+  spatie/laravel-backup          Automated database backups
+  spatie/laravel-activitylog     Audit logging (optional, or build custom)
+
+NPM PACKAGES TO INSTALL
+================================================================================
+  tailwindcss                    Utility CSS
+  alpinejs                       Lightweight JS reactivity
+  datatables.net-bs5             DataTables with Bootstrap 5 styling
+    (or datatables.net-dt for Tailwind)
+  chart.js                       Charts for dashboard
+
+================================================================================
+END OF PLAN
+================================================================================
