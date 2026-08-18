@@ -1,0 +1,255 @@
+NSU TECHNOLOGY TRANSFER OFFICE — TTMS Portal
+Role & Feature Reference  |  Audit / Client Presentation Copy
+Generated: August 2026
+=============================================================================
+
+This document summarises what each user role can see and do inside the
+TTMS (Technology Transfer Management System) internal portal at NSU TTO.
+
+=============================================================================
+1. SYSTEM ADMINISTRATOR
+   Login : admin@tto.northsouth.edu
+   Pass  : Admin@TTO2026
+=============================================================================
+
+Who they are:
+  • The highest-privilege account — typically the IT / portal administrator
+    of the Technology Transfer Office.
+
+What they can do:
+  • Full access to every section of the portal — all sidebar menu items visible.
+  • Dashboard: all-system statistics (total disclosures, pending reviews,
+    active patents, cumulative revenue earned) + upcoming patent deadlines.
+  • Disclosures: view, review, and manage every disclosure regardless of who
+    submitted it; update status at any stage; assign reviewers or officers;
+    add reviewer notes and rejection reasons.
+  • Patents: create, edit, and view all patent records; manage filing
+    deadlines with due-date reminders; track jurisdiction and attorney details.
+  • IP Assignments: record and view all IP ownership determinations
+    (University / Inventor / Joint / Sponsored Research).
+  • Agreements: create, edit, view, and download all legal agreement types
+    (assignment, NDA/CDA, revenue sharing, licensing, sponsored research).
+  • Commercialization: create and manage all commercialization pipelines
+    (licensing, startup spin-off, joint development, direct sale).
+  • Revenue: record incoming licence fees and royalties; set up distribution
+    splits among inventors, departments, and the university; mark paid.
+  • Reports: generate and export Disclosure, Patent, Revenue, and
+    Commercialization reports as CSV files.
+  • Admin — Users: the ONLY role that can list all portal users, change their
+    role, department, designation, or activate / deactivate their account.
+  • Admin — Technologies: manage the Technology Portfolio shown on the
+    public-facing TTO website.
+  • Admin — Startups: manage the Startups directory shown on the public website.
+
+=============================================================================
+2. DIRECTOR  (TTO Director)
+   Login : director@tto.northsouth.edu
+   Pass  : Test@1234
+=============================================================================
+
+Who they are:
+  • The Director of the Technology Transfer Office — senior management
+    overseeing the full IP pipeline.
+
+What they can do:
+  • Dashboard: all-system statistics + upcoming patent deadlines (next 90 days).
+  • Disclosures: view all submitted disclosures; update status at any stage;
+    assign disclosures to reviewers or officers.
+  • Patents: view and manage the full patent portfolio; add / remove deadlines.
+  • IP Assignments: view all ownership determination records; create new ones.
+  • Agreements: view, create, edit, and download all legal agreements.
+  • Commercialization: view and manage all commercialization tracks.
+  • Revenue: view all revenue records and distribution status.
+  • Reports: generate and export all reports as CSV.
+  • Admin — Technologies & Startups: manage public-facing website content.
+  • Cannot: manage individual user accounts (system_admin only).
+
+=============================================================================
+3. TTO OFFICER  (Technology Transfer Officer)
+   Login : tto.officer@tto.northsouth.edu
+   Pass  : Test@1234
+=============================================================================
+
+Who they are:
+  • The day-to-day operator of the TTO portal — handles the full IP lifecycle
+    from disclosure intake through to commercialisation and revenue.
+
+What they can do:
+  • Dashboard: all-system statistics + upcoming patent deadlines.
+  • Disclosures: view all disclosures; update status at any stage; assign to
+    a reviewer; add reviewer notes.
+  • Patents: create new patent records; edit existing ones; add / edit /
+    delete deadline reminders with due dates and notes.
+  • IP Assignments: record ownership outcomes (University / Inventor / Joint /
+    Sponsored Research) and link them to disclosures.
+  • Agreements: create all agreement types; upload signed PDF documents;
+    edit terms and status; track expiry dates.
+  • Commercialization: create and manage tracks — licensing, startup spin-off,
+    joint development, direct sale; record partner details and progress.
+  • Revenue: record incoming payments; set up distribution splits among
+    inventors, departments, and the university; mark individual distributions
+    as paid with payment dates.
+  • Reports: generate and export all reports.
+  • Admin — Technologies & Startups: manage public-facing website listings.
+  • Cannot: manage user accounts.
+
+=============================================================================
+4. LEGAL OFFICER
+   Login : legal.officer@tto.northsouth.edu
+   Pass  : Test@1234
+=============================================================================
+
+Who they are:
+  • Handles the legal side of IP management — agreements, ownership
+    determinations, and patent documentation.
+
+What they can do:
+  • Dashboard: all-system statistics + upcoming patent deadlines.
+  • Disclosures: view all submitted disclosures; add reviewer notes; update
+    status to progress the review workflow.
+  • Patents: view and manage patent records; add filing deadline reminders.
+  • IP Assignments: view all records; create new ownership determinations.
+  • Agreements: full access — create, edit, and download all legal agreements.
+  • Cannot access: Commercialization, Revenue, Reports, Admin panels.
+
+=============================================================================
+5. REVIEWER  (IP Reviewer)
+   Login : reviewer@tto.northsouth.edu
+   Pass  : Test@1234
+=============================================================================
+
+Who they are:
+  • An external or internal technical expert assigned to evaluate disclosures
+    for novelty, utility, and patentability.
+
+What they can do:
+  • Dashboard: portal-wide disclosure counts (for situational awareness).
+  • Disclosures: view ALL submitted disclosures (not only assigned ones);
+    write detailed reviewer notes; update disclosure status
+    (e.g., mark "Under Review", "Patentability Assessed", "Committee Review").
+  • Cannot access: Patents, IP Assignments, Agreements, Commercialization,
+    Revenue, Reports, Admin panels.
+
+=============================================================================
+6. FACULTY  (Faculty Inventor)
+   Login : faculty@northsouth.edu
+   Pass  : Test@1234
+=============================================================================
+
+Who they are:
+  • A faculty member at NSU who is an inventor and wishes to disclose
+    intellectual property created through research or teaching activities.
+
+What they can do:
+  • Dashboard: personal stats only — total disclosures submitted, drafts in
+    progress.
+  • Disclosures — own submissions only:
+    - Fill and save an invention disclosure form as a draft at any time.
+    - Add co-inventors (internal portal users or external collaborators) with
+      name, email, department, and designation.
+    - Upload supporting documents (drawings, experimental data, forms) in
+      PDF, Word, or image formats.
+    - Edit and update the draft any number of times before submission.
+    - Click "Submit to TTO" to formally submit — the system assigns a unique
+      DISC-YYYY-NNNN reference number and locks the form from further editing.
+    - Track the status of each submission through the full review pipeline:
+        Draft → Submitted → Under Review → Ownership Determined
+        → Patentability Assessed → Committee Review
+        → Approved / Rejected → Patent Filing → Commercializing
+  • Cannot see other inventors' disclosures.
+  • Cannot access: Patents, Assignments, Agreements, Commercialization,
+    Revenue, Reports, Admin panels.
+
+=============================================================================
+7. STAFF  (Research Staff / Inventor)
+   Login : staff@northsouth.edu
+   Pass  : Test@1234
+=============================================================================
+
+Who they are:
+  • A research associate or non-faculty staff member who may be a co-inventor
+    or independent inventor.
+
+What they can do:
+  • Identical access and limitations as the Faculty role.
+  • Can create disclosures, add co-inventors, upload documents, and track
+    the status of their own submissions.
+  • Cannot see other inventors' disclosures.
+
+=============================================================================
+8. STUDENT  (Student Inventor / New User)
+   Login : student@northsouth.edu
+   Pass  : Test@1234
+=============================================================================
+
+Who they are:
+  • A student inventor, or any person who registers a new portal account.
+  • This is the DEFAULT role assigned automatically on registration.
+
+What they can do:
+  • Identical access and limitations as the Faculty role.
+  • Can submit disclosures and track their status.
+  • A System Administrator must upgrade the role after verifying the user's
+    identity and position (e.g., to Faculty, Staff, or TTO Officer).
+
+=============================================================================
+HOW TO LOG IN
+=============================================================================
+  URL    : http://127.0.0.1:8000/login   (or your server's address)
+  Method : Enter email OR phone number + password.
+  After login: redirected to /portal/dashboard automatically.
+
+=============================================================================
+CREDENTIAL QUICK REFERENCE
+=============================================================================
+
+  Role            Email                              Password
+  ──────────────────────────────────────────────────────────────────────────
+  system_admin    admin@tto.northsouth.edu           Admin@TTO2026
+  director        director@tto.northsouth.edu        Test@1234
+  tto_officer     tto.officer@tto.northsouth.edu     Test@1234
+  legal_officer   legal.officer@tto.northsouth.edu   Test@1234
+  reviewer        reviewer@tto.northsouth.edu        Test@1234
+  faculty         faculty@northsouth.edu             Test@1234
+  staff           staff@northsouth.edu               Test@1234
+  student         student@northsouth.edu             Test@1234
+
+  Phone login also works: 01711000001 (admin) through 01711000008 (student).
+
+=============================================================================
+DISCLOSURE STATUS PIPELINE  (for reference during walkthrough)
+=============================================================================
+
+  draft               → Inventor is filling in the form; not yet submitted.
+  submitted           → Formally submitted to TTO; awaiting assignment.
+  under_review        → Assigned reviewer is evaluating the disclosure.
+  ownership_determined→ IP ownership (University / Inventor / Joint) decided.
+  patentability_assessed → Patentability search and opinion completed.
+  committee_review    → TTO committee is deliberating on the next action.
+  approved            → Disclosure approved for patent filing / licensing.
+  rejected            → Disclosure rejected (reason recorded in the system).
+  patent_filing       → Patent application in progress at the IP office.
+  commercializing     → Active licensing, spin-off, or commercialization track.
+
+=============================================================================
+DEMO DATA SUMMARY  (seeded for audit)
+=============================================================================
+
+  DISC-2026-0001  AI-Powered Flood Early Warning System   status: approved
+                  → has Patent, IP Assignment, Agreement,
+                    Commercialization track, and Revenue record
+
+  DISC-2026-0002  Biodegradable Nanocomposite Polymer      status: submitted
+                  → sitting in the TTO review inbox
+
+  (draft)         Smart Campus Energy Management           status: draft
+                  → submitted by Staff, not yet sent to TTO
+
+  Patent          BD/BIPO/2026-A-01284 — filed with BIPO
+                  → 2 upcoming deadlines shown on dashboard
+
+  Agreement       Licensing — DataSense Technologies Ltd.  status: signed
+
+  Revenue         BDT 500,000 gross / 450,000 net
+                  Distributions: 40% University (paid), 40% Inventor (paid),
+                                 20% CSE Dept (pending)

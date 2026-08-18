@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TechnologySeeder::class,
             StartupSeeder::class,
+            SystemAdminSeeder::class,
+            TestUsersSeeder::class,
+            DemoDataSeeder::class,
         ]);
     }
 }
