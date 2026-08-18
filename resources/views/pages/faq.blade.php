@@ -65,7 +65,7 @@
         <p class="text-gray-600 text-sm mb-5">Our team is happy to help. Reach out directly or submit a contact form.</p>
         <div class="flex flex-wrap justify-center gap-3">
             <a href="{{ route('contact') }}" class="btn-primary text-sm">Contact Us</a>
-            <a href="mailto:tto@northsouth.edu" class="btn-outline bg-tto-teal text-white text-sm">tto@northsouth.edu</a>
+            <a href="mailto:office.tto@northsouth.edu" class="btn-outline bg-tto-teal text-white text-sm">office.tto@northsouth.edu</a>
         </div>
     </div>
 </section>

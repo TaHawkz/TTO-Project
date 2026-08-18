@@ -16,7 +16,7 @@ return new class extends Migration
             $table->enum('development_stage', ['early_stage', 'filed', 'granted', 'licensed'])->default('early_stage');
             $table->json('benefits');
             $table->boolean('licensing_available')->default(false);
-            $table->string('contact_email')->default('tto@northsouth.edu');
+            $table->string('contact_email')->default('office.tto@northsouth.edu');
             $table->boolean('is_published')->default(true);
             $table->unsignedSmallInteger('sort_order')->default(0);
             $table->timestamps();

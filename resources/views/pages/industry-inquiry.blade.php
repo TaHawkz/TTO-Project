@@ -71,7 +71,7 @@
     </form>
 
     <div class="mt-8 text-center text-sm text-gray-500">
-        Prefer to speak first? Email us at <a href="mailto:industry.tto@northsouth.edu" class="text-tto-teal hover:underline">industry.tto@northsouth.edu</a>.
+        Prefer to speak first? Email us at <a href="mailto:industry.office.tto@northsouth.edu" class="text-tto-teal hover:underline">industry.office.tto@northsouth.edu</a>.
     </div>
 </section>
 

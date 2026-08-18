@@ -85,8 +85,8 @@
                     </div>
                     <div>
                         <p class="font-semibold text-tto-teal-900 text-sm mb-1">Email</p>
-                        <a href="mailto:tto@northsouth.edu" class="text-sm text-tto-teal hover:underline break-all">tto@northsouth.edu</a><br>
-                        <a href="mailto:industry.tto@northsouth.edu" class="text-sm text-tto-teal hover:underline break-all">industry.tto@northsouth.edu</a>
+                        <a href="mailto:office.tto@northsouth.edu" class="text-sm text-tto-teal hover:underline break-all">office.tto@northsouth.edu</a><br>
+                        <a href="mailto:industry.office.tto@northsouth.edu" class="text-sm text-tto-teal hover:underline break-all">industry.office.tto@northsouth.edu</a>
                     </div>
                 </div>
                 <div class="flex gap-4 p-4 bg-tto-teal-light rounded-xl">

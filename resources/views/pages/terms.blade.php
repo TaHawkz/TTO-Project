@@ -29,7 +29,7 @@
             ['title'=>'7. Limitation of Liability', 'body'=>'To the fullest extent permitted by law, NSU TTO and North South University shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of, or inability to use, this website or any content on it.'],
             ['title'=>'8. Amendments', 'body'=>'NSU TTO reserves the right to amend these Terms and Conditions at any time. Continued use of the website after any changes constitutes acceptance of the revised terms. The effective date at the top of this page will be updated accordingly.'],
             ['title'=>'9. Governing Law', 'body'=>'These Terms and Conditions are governed by and construed in accordance with the laws of Bangladesh. Any disputes arising from the use of this website shall be subject to the exclusive jurisdiction of the courts of Bangladesh.'],
-            ['title'=>'10. Contact', 'body'=>'If you have questions about these Terms and Conditions, please contact the NSU Technology Transfer Office at tto@northsouth.edu.'],
+            ['title'=>'10. Contact', 'body'=>'If you have questions about these Terms and Conditions, please contact the NSU Technology Transfer Office at office.tto@northsouth.edu.'],
         ] @endphp
 
         @foreach($sections as $section)

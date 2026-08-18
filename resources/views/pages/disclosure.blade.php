@@ -90,7 +90,7 @@
             Sign In to Submit a Disclosure
         </a>
         <p class="text-sm text-gray-500 mt-3">Portal access requires an NSU institutional email account.</p>
-        <p class="text-sm text-gray-500 mt-1">Prefer paper? <a href="{{ route('forms-templates') }}" class="text-tto-teal hover:underline">Download the PDF form</a> and email it to <a href="mailto:tto@northsouth.edu" class="text-tto-teal hover:underline">tto@northsouth.edu</a>.</p>
+        <p class="text-sm text-gray-500 mt-1">Prefer paper? <a href="{{ route('forms-templates') }}" class="text-tto-teal hover:underline">Download the PDF form</a> and email it to <a href="mailto:office.tto@northsouth.edu" class="text-tto-teal hover:underline">office.tto@northsouth.edu</a>.</p>
     </div>
 
 </section>
